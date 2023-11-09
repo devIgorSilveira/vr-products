@@ -9,7 +9,7 @@ class Product {
   @Column({ type: "varchar", length: 60 })
   description: string;
 
-  @Column({ type: "numeric", precision: 13, scale: 3, nullable: true })
+  @Column({ type: "numeric", precision: 16, scale: 3, nullable: true })
   price: number;
 
   @Column({ type: "bytea", nullable: true })
