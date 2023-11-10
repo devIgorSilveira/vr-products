@@ -4,6 +4,7 @@ import getAllProductsService from "./products/getAllProducts.service";
 import getProductByIdService from "./products/getProductById.service";
 import updateProductService from "./products/updateProduct.service";
 import createStoreService from "./stores/createStore.service";
+import getAllStoresService from "./stores/getAllStores.service";
 
 export {
   createProductService,
@@ -12,4 +13,5 @@ export {
   deleteProductService,
   updateProductService,
   createStoreService,
+  getAllStoresService,
 };
