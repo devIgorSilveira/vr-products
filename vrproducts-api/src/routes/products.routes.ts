@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { createProductController } from "../controllers";
+import {
+  createProductController,
+  getAllProductsController,
+} from "../controllers";
 import {
   validateBodyMiddleware,
   validatePriceOfProductMiddleware,
@@ -7,6 +10,8 @@ import {
 import { productRequestSchema } from "../schemas";
 
 const productRouter = Router();
+
+productRouter.get("", getAllProductsController);
 
 productRouter.post(
   "",

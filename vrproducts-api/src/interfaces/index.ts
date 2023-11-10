@@ -1,3 +1,7 @@
-import { IProductInterface, IProductRequestInterface } from "./product";
+import {
+  IProductInterface,
+  IProductRequestInterface,
+  IQueryProductsInterface,
+} from "./product";
 
-export { IProductInterface, IProductRequestInterface };
+export { IProductInterface, IProductRequestInterface, IQueryProductsInterface };
