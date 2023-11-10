@@ -3,6 +3,7 @@ import deleteProductController from "./products/deleteProduct.controller";
 import getAllProductsController from "./products/getAllProducts.controller";
 import getProductByIdController from "./products/getProductById.controller";
 import updateProductController from "./products/updateProduct.controller";
+import createStoreController from "./stores/createStore.controller";
 
 export {
   createProductController,
@@ -10,4 +11,5 @@ export {
   getProductByIdController,
   deleteProductController,
   updateProductController,
+  createStoreController,
 };
