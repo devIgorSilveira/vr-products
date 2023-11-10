@@ -1,4 +1,5 @@
 import createProductService from "./products/createProduct.service";
 import getAllProductsService from "./products/getAllProducts.service";
+import getProductByIdService from "./products/getProductById.service";
 
-export { createProductService, getAllProductsService };
+export { createProductService, getAllProductsService, getProductByIdService };
