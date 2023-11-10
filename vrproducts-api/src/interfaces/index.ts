@@ -5,6 +5,11 @@ import {
   IProductUpdateInterface,
 } from "./product";
 import { IStoreRequestInterface, IStoreInterface } from "./store";
+import {
+  IProductStoreInterface,
+  IProductStoreRequestInterface,
+  IProductStoreUpdateInterface,
+} from "./productStore";
 
 export {
   IProductInterface,
@@ -13,4 +18,7 @@ export {
   IProductUpdateInterface,
   IStoreRequestInterface,
   IStoreInterface,
+  IProductStoreInterface,
+  IProductStoreRequestInterface,
+  IProductStoreUpdateInterface,
 };

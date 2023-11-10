@@ -1,3 +1,5 @@
+import { IProductStoreInterface } from "../productStore";
+
 export interface IProductRequestInterface {
   description: string;
   price?: number;
@@ -6,7 +8,7 @@ export interface IProductRequestInterface {
 
 export interface IProductInterface extends IProductRequestInterface {
   id: number;
-  productsStore: IProductStoreInterface[];
+  productsStore: IProductStoreWithoutRelationInterface[];
 }
 
 export interface IProductUpdateInterface {
@@ -15,10 +17,10 @@ export interface IProductUpdateInterface {
   image?: string;
 }
 
-interface IProductStoreInterface {
-  id: number;
-  salePrice: number;
-}
+type IProductStoreWithoutRelationInterface = Pick<
+  IProductStoreInterface,
+  "id" | "salePrice"
+>;
 
 export interface IQueryProductsInterface {
   code?: string;
