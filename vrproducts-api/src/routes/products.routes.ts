@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createProductController,
+  deleteProductController,
   getAllProductsController,
   getProductByIdController,
 } from "../controllers";
@@ -26,6 +27,12 @@ productRouter.post(
   validateBodyMiddleware(productRequestSchema),
   validatePriceOfProductMiddleware,
   createProductController
+);
+
+productRouter.delete(
+  "/:id",
+  verifyProductExistMiddleware,
+  deleteProductController
 );
 
 export default productRouter;
