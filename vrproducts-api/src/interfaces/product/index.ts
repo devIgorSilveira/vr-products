@@ -9,6 +9,12 @@ export interface IProductInterface extends IProductRequestInterface {
   productsStore: IProductStoreInterface[];
 }
 
+export interface IProductUpdateInterface {
+  description?: string;
+  price?: number;
+  image?: string;
+}
+
 interface IProductStoreInterface {
   id: number;
   salePrice: number;

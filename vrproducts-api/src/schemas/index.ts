@@ -1,3 +1,3 @@
-import { productRequestSchema } from "./products";
+import { productRequestSchema, productUpdateSchema } from "./products";
 
-export { productRequestSchema };
+export { productRequestSchema, productUpdateSchema };
