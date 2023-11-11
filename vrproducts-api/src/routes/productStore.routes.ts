@@ -1,9 +1,13 @@
 import { Router } from "express";
-import { createProductStoreController } from "../controllers";
+import {
+  createProductStoreController,
+  updateProductStoreController,
+} from "../controllers";
 import {
   validateBodyMiddleware,
   validatePriceOfProductMiddleware,
   verifyProductExistMiddleware,
+  verifyProductStoreExistMiddleware,
   verifyStoreExistMiddleware,
 } from "../middlewares";
 import { ProductStoreRequestSchema } from "../schemas";
@@ -17,6 +21,14 @@ productStoreRouter.post(
   verifyProductExistMiddleware,
   verifyStoreExistMiddleware,
   createProductStoreController
+);
+
+productStoreRouter.patch(
+  "/:id",
+  validateBodyMiddleware(ProductStoreRequestSchema),
+  validatePriceOfProductMiddleware,
+  verifyProductStoreExistMiddleware,
+  updateProductStoreController
 );
 
 export default productStoreRouter;

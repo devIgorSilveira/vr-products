@@ -1,4 +1,5 @@
 import createProductStoreController from "./productStore/createProductStore.controller";
+import updateProductStoreController from "./productStore/updateProductStore.controller";
 import createProductController from "./products/createProduct.controller";
 import deleteProductController from "./products/deleteProduct.controller";
 import getAllProductsController from "./products/getAllProducts.controller";
@@ -16,4 +17,5 @@ export {
   createStoreController,
   getAllStoresController,
   createProductStoreController,
+  updateProductStoreController,
 };
