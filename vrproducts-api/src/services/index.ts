@@ -1,4 +1,5 @@
 import createProductStoreService from "./productStore/createProductStore.service";
+import deleteProductStoreService from "./productStore/deleteProductStore.service";
 import updateProductStoreService from "./productStore/updateProductStore.service";
 import createProductService from "./products/createProduct.service";
 import deleteProductService from "./products/deleteProduct.service";
@@ -18,4 +19,5 @@ export {
   getAllStoresService,
   createProductStoreService,
   updateProductStoreService,
+  deleteProductStoreService,
 };

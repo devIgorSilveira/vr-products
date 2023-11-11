@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createProductStoreController,
+  deleteProductStoreController,
   updateProductStoreController,
 } from "../controllers";
 import {
@@ -29,6 +30,12 @@ productStoreRouter.patch(
   validatePriceOfProductMiddleware,
   verifyProductStoreExistMiddleware,
   updateProductStoreController
+);
+
+productStoreRouter.delete(
+  "/:id",
+  verifyProductStoreExistMiddleware,
+  deleteProductStoreController
 );
 
 export default productStoreRouter;
