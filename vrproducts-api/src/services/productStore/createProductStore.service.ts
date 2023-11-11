@@ -5,6 +5,7 @@ import {
 } from "../../interfaces";
 import { Product, ProductStore, Store } from "../../entities";
 import appDataSource from "../../data-source";
+import { appError } from "../../errors/handleErrors";
 
 const createProductStoreService = async (
   body: IProductStoreRequestInterface,
@@ -21,6 +22,17 @@ const createProductStoreService = async (
 
   const productStoreRepo: Repository<ProductStore> =
     appDataSource.getRepository(ProductStore);
+
+  const isProductAlreadyInStore = await productStoreRepo.findOne({
+    where: {
+      product: product!,
+      store: store!,
+    },
+  });
+
+  if (isProductAlreadyInStore) {
+    throw new appError("This product is already priced in this store!", 409);
+  }
 
   const productStore = await productStoreRepo.save({
     product: product!,
