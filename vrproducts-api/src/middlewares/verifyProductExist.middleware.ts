@@ -9,14 +9,16 @@ const verifyProductExistMiddleware = async (
   res: Response,
   next: NextFunction
 ) => {
-  if (!Number.isInteger(parseInt(req.params.id))) {
+  const id = req.params.id || req.params.productId;
+
+  if (!Number.isInteger(parseInt(id))) {
     throw new appError("The id passed is not an integer!");
   }
 
   const productRepo: Repository<Product> = appDataSource.getRepository(Product);
 
   const isProductExists = await productRepo.findOneBy({
-    id: parseInt(req.params.id),
+    id: parseInt(id),
   });
 
   if (!isProductExists) {

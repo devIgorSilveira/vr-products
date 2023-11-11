@@ -5,8 +5,8 @@ const validatePriceOfProductMiddleware = (
   res: Response,
   next: NextFunction
 ) => {
-  if (req.body.price) {
-    const { price } = req.body;
+  if (req.body.price || req.body.salePrice) {
+    let price = req.body.price || req.body.salePrice;
 
     const numbers = price.toString().split(".");
 
