@@ -8,7 +8,14 @@ const getProductByIdService = async (
 ): Promise<IProductInterface> => {
   const productRepo: Repository<Product> = appDataSource.getRepository(Product);
 
-  const product = await productRepo.findOneBy({ id: id });
+  const product = await productRepo.findOne({
+    where: {
+      id: id,
+    },
+    relations: {
+      productsStore: true,
+    },
+  });
 
   return product!;
 };
