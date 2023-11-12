@@ -7,18 +7,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Leite Condensado</td>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.description }}</td>
       <td>
-        2,00 <span><mat-icon>delete</mat-icon><mat-icon>edit</mat-icon></span>
-      </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Coca Cola Lata</td>
-      <td>
-        4,30 <span><mat-icon>delete</mat-icon><mat-icon>edit</mat-icon></span>
+        {{ product.price ? product.price.toString().replace(".", ",") : "---" }}
+        <span><mat-icon>delete</mat-icon><mat-icon>edit</mat-icon></span>
       </td>
     </tr>
   </tbody>
