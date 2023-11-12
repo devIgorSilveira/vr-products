@@ -1,0 +1,49 @@
+form {
+  margin-top: 2rem;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: self-end;
+  gap: 0.5rem;
+}
+
+label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-weight: 500;
+}
+
+input {
+  padding: 8px;
+
+  border-style: outset;
+  border-radius: 8px;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 4px;
+
+  background-color: transparent;
+  font-weight: 600;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}

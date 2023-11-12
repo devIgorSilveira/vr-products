@@ -15,6 +15,7 @@ mat-icon {
   height: fit-content;
 
   font-size: 2.5rem;
+  border-radius: 50%;
 
   position: absolute;
   left: 16px;
@@ -25,5 +26,6 @@ mat-icon {
 }
 
 mat-icon:hover {
-  transform: scale(1.1);
+  background-color: black;
+  color: white;
 }
