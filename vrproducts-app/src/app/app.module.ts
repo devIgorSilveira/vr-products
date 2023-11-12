@@ -7,10 +7,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   imports: [BrowserModule, ReactiveFormsModule, MatIconModule],
-  declarations: [AppComponent, HeaderComponent, FilterComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FilterComponent,
+    TableComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

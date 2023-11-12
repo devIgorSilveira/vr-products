@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+  padding: 0 16px;
+  margin-top: 2rem;
+
+  text-align: center;
+
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: outset 2px black;
+
+  padding: 8px;
+
+  position: relative;
+}
+
+span {
+  position: absolute;
+  right: 10px;
+  bottom: 2px;
+}
+
+mat-icon {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+
+  font-size: 1rem;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+mat-icon:hover {
+  background-color: black;
+  color: white;
+}

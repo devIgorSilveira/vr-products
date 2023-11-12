@@ -1,8 +1,6 @@
 form {
   margin-top: 2rem;
 
-  padding: 0 16px;
-
   display: flex;
   align-items: self-end;
   gap: 0.5rem;
