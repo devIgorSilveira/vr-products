@@ -5,3 +5,7 @@ export interface IProductStoreInterface {
   salePrice: number;
   store: IStoreInterface;
 }
+
+export interface ICreteProductStoreInterface {
+  salePrice: number;
+}
