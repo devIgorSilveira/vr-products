@@ -26,4 +26,12 @@ export class ProductStoresService {
       console.error(err);
     }
   }
+
+  async deleteProductStore(id: string) {
+    try {
+      (await this.api.delete(`/productstore/${id}`)).data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }

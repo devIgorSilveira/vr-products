@@ -8,6 +8,7 @@ import {
 } from '../../interfaces/product';
 import { ProductsService } from '../../services/products.service';
 import { IProductStoreInterface } from '../../interfaces/productStore';
+import { ProductStoresService } from '../../services/productStores.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -36,7 +37,8 @@ export class ProductDetailPage implements OnInit {
     private formBuilder: FormBuilder,
     private atvRoute: ActivatedRoute,
     private productService: ProductsService,
-    private router: Router
+    private router: Router,
+    private productStoreService: ProductStoresService
   ) {}
 
   ngOnInit(): void {
@@ -103,6 +105,12 @@ export class ProductDetailPage implements OnInit {
     }
 
     this.router.navigate(['/']);
+  }
+
+  async deleteProductStore(id: string) {
+    await this.productStoreService.deleteProductStore(id);
+
+    this.getSalesPrices();
   }
 
   handleModal() {

@@ -33,7 +33,11 @@
           <td>{{ sale.store.id }} - {{ sale.store.description }}</td>
           <td>
             {{ sale.salePrice.toString().replace(".", ",") }}
-            <span><mat-icon>delete</mat-icon><mat-icon>edit</mat-icon></span>
+            <span
+              ><mat-icon (click)="deleteProductStore(sale.id.toString())"
+                >delete</mat-icon
+              ><mat-icon>edit</mat-icon></span
+            >
           </td>
         </tr>
       </tbody>
