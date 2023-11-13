@@ -38,7 +38,12 @@
       <td>{{ product.description }}</td>
       <td>
         {{ product.price ? product.price.toString().replace(".", ",") : "---" }}
-        <span><mat-icon>delete</mat-icon><mat-icon>edit</mat-icon></span>
+        <span
+          ><mat-icon>delete</mat-icon
+          ><mat-icon [routerLink]="['/product', product.id]"
+            >edit</mat-icon
+          ></span
+        >
       </td>
     </tr>
   </tbody>

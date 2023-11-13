@@ -8,6 +8,11 @@ export interface IProductInterface {
   productStore: IProductStoreInterface[];
 }
 
+export interface ICreateProductInterface {
+  description: string;
+  price?: number;
+}
+
 export interface IProductFilterInterface {
   description?: string | null;
   id?: string | null;

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  ICreateProductInterface,
   IProductFilterInterface,
   IProductInterface,
 } from '../interfaces/product';
@@ -44,6 +45,22 @@ export class ProductsService {
 
     try {
       return (await this.api.get('/product' + personalizedUrl)).data;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async getProductById(id: string) {
+    try {
+      return (await this.api.get(`/product/${id}`)).data;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async createProduct(body: ICreateProductInterface) {
+    try {
+      return (await this.api.post('/product', body)).data;
     } catch (err) {
       console.error(err);
     }
