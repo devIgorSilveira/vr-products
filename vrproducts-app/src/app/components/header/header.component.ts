@@ -16,4 +16,8 @@ export class HeaderComponent {
   createProduct() {
     this.detail.createProduct();
   }
+
+  deleteProduct() {
+    this.detail.deleteProduct();
+  }
 }

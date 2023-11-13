@@ -28,12 +28,17 @@ export class TableComponent implements OnInit {
   }
 
   async getProducts() {
-    this.products = await this.productService.getProducts();
+    this.products = [...(await this.productService.getProducts())];
   }
 
   async onSubmit() {
     this.products = [
       ...(await this.productService.filterProducts(this.filterForm.value)),
     ];
+  }
+
+  async deleteProduct(id: string) {
+    await this.productService.deleteProduct(id);
+    this.getProducts();
   }
 }

@@ -65,4 +65,12 @@ export class ProductsService {
       console.error(err);
     }
   }
+
+  async deleteProduct(id: string) {
+    try {
+      return (await this.api.delete(`/product/${id}`)).data;
+    } catch (err) {
+      console.error(err);
+    }
+  }
 }

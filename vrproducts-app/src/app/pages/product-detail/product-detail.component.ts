@@ -71,4 +71,12 @@ export class ProductDetailPage implements OnInit {
       this.router.navigate(['/']);
     });
   }
+
+  async deleteProduct() {
+    if (this.id) {
+      await this.productService.deleteProduct(this.id.toString());
+    }
+
+    this.router.navigate(['/']);
+  }
 }

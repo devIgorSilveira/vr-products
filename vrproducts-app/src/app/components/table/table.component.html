@@ -39,7 +39,8 @@
       <td>
         {{ product.price ? product.price.toString().replace(".", ",") : "---" }}
         <span
-          ><mat-icon>delete</mat-icon
+          ><mat-icon (click)="deleteProduct(product.id.toString())"
+            >delete</mat-icon
           ><mat-icon [routerLink]="['/product', product.id]"
             >edit</mat-icon
           ></span
