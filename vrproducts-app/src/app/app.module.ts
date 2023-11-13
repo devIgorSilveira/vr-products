@@ -16,7 +16,7 @@ import { ProductDetailPage } from './pages/product-detail/product-detail.compone
     ReactiveFormsModule,
     MatIconModule,
     RouterModule.forRoot([
-      { path: 'main', component: MainPage },
+      { path: '', component: MainPage },
       { path: 'product/:id', component: ProductDetailPage },
     ]),
   ],

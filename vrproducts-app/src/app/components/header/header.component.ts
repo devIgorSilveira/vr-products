@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   constructor(private router: Router) {}
 
-  isMain = this.router.url.includes('main');
+  isMain = this.router.url == '/';
   isDetail = this.router.url.includes('product');
 }
