@@ -23,7 +23,7 @@ span {
   bottom: 2px;
 }
 
-mat-icon {
+span mat-icon {
   width: fit-content;
   height: fit-content;
   padding: 5px;
@@ -36,7 +36,55 @@ mat-icon {
   transition: 0.3s;
 }
 
-mat-icon:hover {
+span mat-icon:hover {
+  background-color: black;
+  color: white;
+}
+
+form {
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: self-end;
+  gap: 0.5rem;
+}
+
+label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-weight: 500;
+}
+
+input {
+  padding: 8px;
+
+  border-style: outset;
+  border-radius: 8px;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 4px;
+
+  background-color: transparent;
+  font-weight: 600;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
   background-color: black;
   color: white;
 }

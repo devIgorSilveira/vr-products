@@ -7,3 +7,10 @@ export interface IProductInterface {
   image?: string;
   productStore: IProductStoreInterface[];
 }
+
+export interface IProductFilterInterface {
+  description?: string | null;
+  id?: string | null;
+  price?: string | null;
+  salePrice?: string | null;
+}

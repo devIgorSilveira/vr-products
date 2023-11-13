@@ -1,3 +1,29 @@
+<form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="code">Código</label>
+    <input type="number" id="code" formControlName="id" />
+  </div>
+
+  <div>
+    <label for="desc">Descrição</label>
+    <input type="text" id="desc" formControlName="description" />
+  </div>
+
+  <div>
+    <label for="price">Custo</label>
+    <input type="text" id="price" formControlName="price" />
+  </div>
+
+  <div>
+    <label for="salePrice">Preço de Venda</label>
+    <input type="number" id="salePrice" formControlName="salePrice" />
+  </div>
+
+  <button type="submit">Pesquisar <mat-icon>search</mat-icon></button>
+  <button type="button" (click)="getProducts()">
+    Resetar <mat-icon>clear</mat-icon>
+  </button>
+</form>
 <table>
   <thead>
     <tr>

@@ -1,16 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
-import { IProductInterface } from '../../interfaces/product';
+import {
+  IProductFilterInterface,
+  IProductInterface,
+} from '../../interfaces/product';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
+@Injectable({
+  providedIn: 'root',
+})
 export class TableComponent implements OnInit {
-  constructor(private productService: ProductsService) {}
-
   products: IProductInterface[] = [];
+
+  filterForm = this.formBuilder.group({
+    id: '',
+    description: '',
+    price: '',
+    salePrice: '',
+  });
+
+  constructor(
+    private productService: ProductsService,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -18,6 +35,11 @@ export class TableComponent implements OnInit {
 
   async getProducts() {
     this.products = await this.productService.getProducts();
-    console.log(this.products);
+  }
+
+  async onSubmit() {
+    this.products = [
+      ...(await this.productService.filterProducts(this.filterForm.value)),
+    ];
   }
 }
