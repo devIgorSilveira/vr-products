@@ -1,18 +1,12 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
-import {
-  IProductFilterInterface,
-  IProductInterface,
-} from '../../interfaces/product';
+import { IProductInterface } from '../../interfaces/product';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
-})
-@Injectable({
-  providedIn: 'root',
 })
 export class TableComponent implements OnInit {
   products: IProductInterface[] = [];

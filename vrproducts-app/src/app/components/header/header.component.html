@@ -1,4 +1,25 @@
 <header>
-  <mat-icon>add_circle_outline</mat-icon>
-  <h1>Consulta de Produtos</h1>
+  <div *ngIf="isMain">
+    <section>
+      <a routerLink="/product/0">
+        <mat-icon>add_circle_outline</mat-icon>
+      </a>
+    </section>
+    <h1>Consulta de Produtos</h1>
+  </div>
+
+  <div *ngIf="isDetail">
+    <section>
+      <a routerLink="/main">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+      <button type="button">
+        <mat-icon>save</mat-icon>
+      </button>
+      <button type="button">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </section>
+    <h1>Cadastro de Pedido</h1>
+  </div>
 </header>
