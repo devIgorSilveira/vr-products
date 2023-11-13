@@ -6,6 +6,7 @@ import {
   IProductInterface,
 } from '../../interfaces/product';
 import { ProductsService } from '../../services/products.service';
+import { IProductStoreInterface } from '../../interfaces/productStore';
 
 @Component({
   selector: 'app-product-detail',
@@ -19,6 +20,8 @@ export class ProductDetailPage implements OnInit {
   id: string | null = null;
 
   product: IProductInterface | null = null;
+
+  salePrices: IProductStoreInterface[] | null = null;
 
   productForm = this.formBuilder.group({
     id: '',
@@ -55,6 +58,10 @@ export class ProductDetailPage implements OnInit {
           description: result.description,
           price: result.price ? result.price.toString() : '',
         });
+
+        if (result.productsStore) {
+          this.salePrices = [...result.productsStore];
+        }
       });
   }
 
@@ -66,7 +73,7 @@ export class ProductDetailPage implements OnInit {
     if (this.productForm.value.price) {
       body.price = parseInt(this.productForm.value.price);
     }
-    console.log(body);
+
     await this.productService.createProduct(body).then((result) => {
       this.router.navigate(['/']);
     });

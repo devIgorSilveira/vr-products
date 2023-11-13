@@ -5,7 +5,7 @@ export interface IProductInterface {
   description: string;
   price?: number;
   image?: string;
-  productStore: IProductStoreInterface[];
+  productsStore: IProductStoreInterface[];
 }
 
 export interface ICreateProductInterface {
