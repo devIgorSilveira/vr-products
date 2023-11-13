@@ -35,9 +35,7 @@ export class ProductsService {
       personalizedUrl += `code=${filters.id}&`;
     }
     if (filters.price) {
-      console.log(filters.price);
       personalizedUrl += `price=${filters.price.replace(',', '.')}&`;
-      console.log(personalizedUrl);
     }
     if (filters.salePrice) {
       personalizedUrl += `saleprice=${filters.salePrice}&`;
@@ -69,6 +67,14 @@ export class ProductsService {
   async deleteProduct(id: string) {
     try {
       return (await this.api.delete(`/product/${id}`)).data;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async getProductsStoresOfAProduct(id: string) {
+    try {
+      return (await this.api.get(`/productstore/${id}`)).data;
     } catch (err) {
       console.error(err);
     }

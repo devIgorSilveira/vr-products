@@ -39,11 +39,10 @@ export class ProductDetailPage implements OnInit {
   ngOnInit(): void {
     this.id = this.atvRoute.snapshot.paramMap.get('id');
 
+    this.productForm.controls.id.disable();
     if (this.id != '0') {
       this.getProduct();
-      this.productForm.controls.id.disable();
-    } else {
-      this.productForm.controls.id.disable();
+      this.getSalesPrices();
     }
   }
 
@@ -58,10 +57,14 @@ export class ProductDetailPage implements OnInit {
           description: result.description,
           price: result.price ? result.price.toString() : '',
         });
+      });
+  }
 
-        if (result.productsStore) {
-          this.salePrices = [...result.productsStore];
-        }
+  async getSalesPrices() {
+    await this.productService
+      .getProductsStoresOfAProduct(this.id!)
+      .then((result) => {
+        this.salePrices = result;
       });
   }
 
