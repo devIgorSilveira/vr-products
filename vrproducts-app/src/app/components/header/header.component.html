@@ -13,7 +13,10 @@
       <a routerLink="/">
         <mat-icon>arrow_back</mat-icon>
       </a>
-      <button type="button" (click)="createProduct()">
+      <button type="button" (click)="createProduct()" *ngIf="isCreate">
+        <mat-icon>save</mat-icon>
+      </button>
+      <button type="button" (click)="patchProduct()" *ngIf="!isCreate">
         <mat-icon>save</mat-icon>
       </button>
       <button type="button" (click)="deleteProduct()">

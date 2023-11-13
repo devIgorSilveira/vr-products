@@ -12,9 +12,14 @@ export class HeaderComponent {
 
   isMain = this.router.url == '/';
   isDetail = this.router.url.includes('product');
+  isCreate = this.router.url == '/product/0';
 
   createProduct() {
     this.detail.createProduct();
+  }
+
+  patchProduct() {
+    this.detail.patchProduct();
   }
 
   deleteProduct() {

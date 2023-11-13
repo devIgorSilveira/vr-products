@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   ICreateProductInterface,
   IProductFilterInterface,
-  IProductInterface,
+  IUpdateProductInterface,
 } from '../interfaces/product';
 
 import axios from 'axios';
@@ -75,6 +75,14 @@ export class ProductsService {
   async getProductsStoresOfAProduct(id: string) {
     try {
       return (await this.api.get(`/productstore/${id}`)).data;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async patchProduct(body: IUpdateProductInterface, id: string) {
+    try {
+      return (await this.api.patch(`/product/${id}`, body)).data;
     } catch (err) {
       console.error(err);
     }

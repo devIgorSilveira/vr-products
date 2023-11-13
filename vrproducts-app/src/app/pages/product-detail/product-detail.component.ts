@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {
   ICreateProductInterface,
   IProductInterface,
+  IUpdateProductInterface,
 } from '../../interfaces/product';
 import { ProductsService } from '../../services/products.service';
 import { IProductStoreInterface } from '../../interfaces/productStore';
@@ -80,6 +81,18 @@ export class ProductDetailPage implements OnInit {
     await this.productService.createProduct(body).then((result) => {
       this.router.navigate(['/']);
     });
+  }
+
+  async patchProduct() {
+    const body: IUpdateProductInterface = {} as IUpdateProductInterface;
+
+    body.description = this.productForm.value.description!;
+
+    body.price = this.productForm.value.price!;
+
+    await this.productService.patchProduct(body, this.id!.toString());
+
+    this.getProduct();
   }
 
   async deleteProduct() {

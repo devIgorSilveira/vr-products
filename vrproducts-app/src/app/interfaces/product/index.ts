@@ -13,6 +13,11 @@ export interface ICreateProductInterface {
   price?: number;
 }
 
+export interface IUpdateProductInterface {
+  description?: string;
+  price?: string;
+}
+
 export interface IProductFilterInterface {
   description?: string | null;
   id?: string | null;
