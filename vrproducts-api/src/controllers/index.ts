@@ -1,5 +1,6 @@
 import createProductStoreController from "./productStore/createProductStore.controller";
 import deleteProductStoreController from "./productStore/deleteProductStore.controller";
+import getProductStoreOfOneProductController from "./productStore/getProductStoreOfOneProduct.controller";
 import updateProductStoreController from "./productStore/updateProductStore.controller";
 import createProductController from "./products/createProduct.controller";
 import deleteProductController from "./products/deleteProduct.controller";
@@ -20,4 +21,5 @@ export {
   createProductStoreController,
   updateProductStoreController,
   deleteProductStoreController,
+  getProductStoreOfOneProductController,
 };

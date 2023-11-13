@@ -8,7 +8,7 @@ export interface IProductRequestInterface {
 
 export interface IProductInterface extends IProductRequestInterface {
   id: number;
-  productsStore: IProductStoreWithoutRelationInterface[];
+  productsStore: IProductStoreInterface[];
 }
 
 export interface IProductUpdateInterface {
@@ -16,11 +16,6 @@ export interface IProductUpdateInterface {
   price?: number;
   image?: string;
 }
-
-type IProductStoreWithoutRelationInterface = Pick<
-  IProductStoreInterface,
-  "id" | "salePrice"
->;
 
 export interface IQueryProductsInterface {
   code?: string;

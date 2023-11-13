@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   createProductStoreController,
   deleteProductStoreController,
+  getProductStoreOfOneProductController,
   updateProductStoreController,
 } from "../controllers";
 import {
@@ -14,6 +15,12 @@ import {
 import { ProductStoreRequestSchema } from "../schemas";
 
 const productStoreRouter = Router();
+
+productStoreRouter.get(
+  "/:id",
+  verifyProductExistMiddleware,
+  getProductStoreOfOneProductController
+);
 
 productStoreRouter.post(
   "/:productId/:storeId",
