@@ -12,7 +12,8 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    if (this.router.url == 'localhost:4200') {
+    console.log(this.router.url);
+    if (this.router.url == '/') {
       this.router.navigate(['/main']);
     }
   }
