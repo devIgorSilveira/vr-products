@@ -1,0 +1,29 @@
+<div class="container">
+  <section>
+    <header>
+      <button type="button">
+        <mat-icon>save</mat-icon>
+      </button>
+      <h2>Alteração/Inclusão de Preço</h2>
+      <button type="button" (click)="handleModal()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </header>
+    <form>
+      <div>
+        <label for="store">Loja*</label>
+        <select id="store">
+          <option value=""></option>
+          <option *ngFor="let store of stores" value="{{ store.id }}">
+            {{ store.id }} - {{ store.description }}
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <label for="salePrice">Preço de Venda (R$)*</label>
+        <input type="text" id="salePrice" />
+      </div>
+    </form>
+  </section>
+</div>

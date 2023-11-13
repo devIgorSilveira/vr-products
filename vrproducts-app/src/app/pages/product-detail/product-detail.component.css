@@ -74,7 +74,8 @@ span {
   bottom: 2px;
 }
 
-span mat-icon {
+span mat-icon,
+th mat-icon {
   width: fit-content;
   height: fit-content;
   padding: 5px;
@@ -87,7 +88,14 @@ span mat-icon {
   transition: 0.3s;
 }
 
-span mat-icon:hover {
+span mat-icon:hover,
+th mat-icon:hover {
   background-color: black;
   color: white;
+}
+
+th mat-icon {
+  position: absolute;
+  left: 4px;
+  top: 6px;
 }

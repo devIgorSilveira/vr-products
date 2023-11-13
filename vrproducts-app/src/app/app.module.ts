@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TableComponent } from './components/table/table.component';
 import { MainPage } from './pages/main/main.component';
 import { ProductDetailPage } from './pages/product-detail/product-detail.component';
+import { ModalProductStoreComponent } from './components/modalProductStore/modal-product-store.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { ProductDetailPage } from './pages/product-detail/product-detail.compone
     TableComponent,
     ProductDetailPage,
     MainPage,
+    ModalProductStoreComponent,
   ],
   bootstrap: [AppComponent],
 })

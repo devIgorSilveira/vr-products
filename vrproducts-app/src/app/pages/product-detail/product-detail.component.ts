@@ -24,6 +24,8 @@ export class ProductDetailPage implements OnInit {
 
   salePrices: IProductStoreInterface[] | null = null;
 
+  isModalOpen = false;
+
   productForm = this.formBuilder.group({
     id: '',
     description: '',
@@ -101,5 +103,9 @@ export class ProductDetailPage implements OnInit {
     }
 
     this.router.navigate(['/']);
+  }
+
+  handleModal() {
+    this.isModalOpen = !this.isModalOpen;
   }
 }

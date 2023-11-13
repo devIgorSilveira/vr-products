@@ -22,7 +22,9 @@
     <table>
       <thead>
         <tr>
-          <th>Loja</th>
+          <th>
+            <mat-icon (click)="handleModal()">add_circle_outline</mat-icon> Loja
+          </th>
           <th>Preço de venda (R$)</th>
         </tr>
       </thead>
@@ -38,4 +40,6 @@
     </table>
   </div>
   <div class="rigth"></div>
+
+  <app-modal-product-store *ngIf="isModalOpen"></app-modal-product-store>
 </main>
