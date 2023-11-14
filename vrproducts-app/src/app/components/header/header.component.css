@@ -1,0 +1,42 @@
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  border-color: black;
+
+  box-shadow: black 0px 3px 15px 3px;
+}
+
+section {
+  position: absolute;
+  left: 16px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+mat-icon {
+  width: fit-content;
+  height: fit-content;
+
+  color: black;
+
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 3px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+mat-icon:hover {
+  background-color: black;
+  color: white;
+}

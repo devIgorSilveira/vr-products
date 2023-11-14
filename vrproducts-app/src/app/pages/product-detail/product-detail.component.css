@@ -1,0 +1,101 @@
+.container {
+  width: 95%;
+  margin: 2rem auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  width: 70%;
+}
+
+.rigth {
+  width: 25%;
+  height: 200px;
+
+  border: solid black 2px;
+}
+
+form {
+  display: flex;
+  align-items: self-end;
+  gap: 0.5rem;
+
+  padding: 0 16px;
+}
+
+label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-weight: 500;
+}
+
+input {
+  padding: 8px;
+
+  border-style: outset;
+  border-radius: 8px;
+  border-color: black;
+}
+
+input:disabled {
+  border: outset black 2px;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+table {
+  width: 100%;
+  padding: 0 16px;
+  margin-top: 2rem;
+
+  text-align: center;
+
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: outset 2px black;
+
+  padding: 8px;
+
+  position: relative;
+}
+
+span {
+  position: absolute;
+  right: 10px;
+  bottom: 2px;
+}
+
+span mat-icon,
+th mat-icon {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+
+  font-size: 1rem;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+span mat-icon:hover,
+th mat-icon:hover {
+  background-color: black;
+  color: white;
+}
+
+th mat-icon {
+  position: absolute;
+  left: 4px;
+  top: 6px;
+}
