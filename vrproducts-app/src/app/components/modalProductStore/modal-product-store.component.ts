@@ -4,7 +4,7 @@ import { StoresService } from '../../services/stores.service';
 import { IStoreInterface } from '../../interfaces/store';
 import { FormBuilder } from '@angular/forms';
 import { ProductStoresService } from '../../services/productStores.service';
-import { Router } from '@angular/router';
+import { IProductStoreInterface } from '../../interfaces/productStore';
 
 @Component({
   selector: 'app-modal-product-store',
@@ -16,6 +16,8 @@ export class ModalProductStoreComponent implements OnInit {
 
   productId = this.detail.id;
 
+  editProductStore: IProductStoreInterface | null | undefined = null;
+
   formProductStore = this.formBuilder.group({
     storeId: '',
     salePrice: '',
@@ -25,12 +27,25 @@ export class ModalProductStoreComponent implements OnInit {
     private detail: ProductDetailPage,
     private storesService: StoresService,
     private formBuilder: FormBuilder,
-    private productStoreService: ProductStoresService,
-    private router: Router
+    private productStoreService: ProductStoresService
   ) {}
 
   ngOnInit(): void {
     this.getStores();
+
+    if (this.detail.productStoreId) {
+      this.editProductStore = this.detail.salePrices!.find(
+        (sale) => sale.id == this.detail.productStoreId
+      );
+
+      this.formProductStore.controls.salePrice.patchValue(
+        this.editProductStore!.salePrice.toString()
+      );
+      this.formProductStore.controls.storeId.patchValue(
+        this.editProductStore!.store.id.toString()
+      );
+      this.formProductStore.controls.storeId.disable();
+    }
   }
 
   async getStores() {
@@ -52,11 +67,29 @@ export class ModalProductStoreComponent implements OnInit {
           salePrice: parseInt(salePrice!),
         })
         .then((result) => {
-          const route = `/product/${this.productId}`;
           this.detail.getProduct();
           this.detail.getSalesPrices();
           this.detail.handleModal();
-          this.router.navigate([route]);
+        });
+    }
+  }
+
+  async patchProductStore() {
+    const { salePrice } = this.formProductStore.value;
+
+    if (salePrice == '') {
+      window.alert(
+        'Um ou mais campos obrigatórios não foram preenchidos corretamente'
+      );
+    } else {
+      await this.productStoreService
+        .updateProductStore(this.editProductStore!.id.toString(), {
+          salePrice: parseInt(salePrice!),
+        })
+        .then((result) => {
+          this.detail.getProduct();
+          this.detail.getSalesPrices();
+          this.detail.handleModal();
         });
     }
   }

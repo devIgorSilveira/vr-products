@@ -25,6 +25,8 @@ export class ProductDetailPage implements OnInit {
 
   salePrices: IProductStoreInterface[] | null = null;
 
+  productStoreId: number | null = null;
+
   isModalOpen = false;
 
   productForm = this.formBuilder.group({
@@ -114,6 +116,12 @@ export class ProductDetailPage implements OnInit {
   }
 
   handleModal() {
+    this.productStoreId = null;
     this.isModalOpen = !this.isModalOpen;
+  }
+
+  openModalEdit(id: number) {
+    this.isModalOpen = true;
+    this.productStoreId = id;
   }
 }

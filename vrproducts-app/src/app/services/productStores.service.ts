@@ -27,6 +27,14 @@ export class ProductStoresService {
     }
   }
 
+  async updateProductStore(id: string, body: ICreteProductStoreInterface) {
+    try {
+      (await this.api.patch(`/productstore/${id}`, body)).data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   async deleteProductStore(id: string) {
     try {
       (await this.api.delete(`/productstore/${id}`)).data;
