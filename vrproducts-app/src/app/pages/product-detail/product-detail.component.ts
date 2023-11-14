@@ -81,11 +81,13 @@ export class ProductDetailPage implements OnInit {
     body.description = this.productForm.value.description!;
 
     if (this.productForm.value.price) {
-      body.price = parseInt(this.productForm.value.price);
+      body.price = parseFloat(this.productForm.value.price.replace(',', '.'));
     }
 
     await this.productService.createProduct(body).then((result) => {
-      this.router.navigate(['/']);
+      if (result) {
+        this.router.navigate(['/']);
+      }
     });
   }
 

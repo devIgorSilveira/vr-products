@@ -59,7 +59,13 @@ export class ProductsService {
   async createProduct(body: ICreateProductInterface) {
     try {
       return (await this.api.post('/product', body)).data;
-    } catch (err) {
+    } catch (err: any) {
+      if (err.response.data.error) {
+        window.alert(err.response.data.error[0]);
+      }
+      if (err.response.data.message) {
+        window.alert(err.response.data.message);
+      }
       console.error(err);
     }
   }
@@ -83,7 +89,13 @@ export class ProductsService {
   async patchProduct(body: IUpdateProductInterface, id: string) {
     try {
       return (await this.api.patch(`/product/${id}`, body)).data;
-    } catch (err) {
+    } catch (err: any) {
+      if (err.response.data.error) {
+        window.alert(err.response.data.error[0]);
+      }
+      if (err.response.data.message) {
+        window.alert(err.response.data.message);
+      }
       console.error(err);
     }
   }
